@@ -2,6 +2,16 @@ header {
     display: flex;
 }
 
+#continue-quiz-btn {
+    display: none;
+}
+
+.quiz-question {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 /* Utilities */
 
 .flex-box {
