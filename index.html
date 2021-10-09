@@ -5,16 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <header>
-    <div class="header">
-        <h1>Coding Quiz</h1>
-    </div>
-    <div>
+    <div class="flex-box space-between">
         <a href="">View High Scores</a>
+        <p>Time: <span id="timer"></span> Seconds</p>
     </div>
 </header>
 <body>
-    
+    <main class="flex-box flex-center">
+        <div class="flex-box flex-center w-75">
+            <h2>Coding Quiz Challenge</h2>
+            <p class="text-center">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            <button>Start Quiz</button>
+        </div>
+    </main>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

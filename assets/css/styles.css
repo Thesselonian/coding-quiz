@@ -1,0 +1,32 @@
+header {
+    display: flex;
+}
+
+/* Utilities */
+
+.flex-box {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.text-center {
+    text-align: center;
+}
