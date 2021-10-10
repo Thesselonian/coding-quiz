@@ -4,17 +4,20 @@ var quizContent = document.getElementById("quiz-content");
 var quiz = document.getElementById("quiz");
 var timerEl = document.getElementById("timer");
 var feedBack = document.createElement("span");
-if(localStorage.getItem('scores')==="") {
-    var scores = [];
-}
-else {
-    var scores = JSON.parse(localStorage.getItem('scores'));
-}
 
 //define javascript variables
+var scores = [];
 var score = 0;
 var timer = 60;
 var currentQuestion = 0;
+
+//pull scores from local storage. If local storage scores is empty then set scores to empty array
+if(localStorage.getItem('scores')==null) {
+    scores = [];
+    }
+else {
+    scores = JSON.parse(localStorage.getItem('scores'));
+}
 
 //Starting Parameters
 timerEl.innerHTML = timer
@@ -60,6 +63,9 @@ clearQuizContent = function() {
 };
 
 endGame = function () {
+    //Stop the timer
+    clearInterval(interval);
+
     //prompt tells user they are done with the quiz
     quizContent.firstElementChild.innerText = "All done!";
 
@@ -88,18 +94,20 @@ endGame = function () {
     quizContent.appendChild(initialsInput);
     quizContent.appendChild(initialsSubmit);
 
-    //Upon submission of initials create score object with initials and associated score, push object to scores array
+    //Upon submission of initials create score object with initials and associated score, push object to scores array and then to local storage
     initialsSubmit.addEventListener("click", function() {
         var playerScore = {
             player: document.getElementById("initials").value,
             score: score,
         };
-        console.log(playerScore)
+
+        //append scores javascript array with new score
         scores.push(playerScore);
         localStorage.setItem('scores', JSON.stringify(scores));
-    })
 
-     
+        //clear the initials input field
+        document.getElementById("initials").value = "";
+    })
 }
 
 //Function that creates quiz questions and determines if answer is correct
@@ -152,14 +160,15 @@ populateQuestions = function() {
 };
 
 //function for countdown
+var interval
 countdown = function() {
-    setInterval(function() {
+    interval = setInterval(function() {
         timer--;
         timerEl.innerHTML = timer
         if(timer===0) {
             clearQuizContent();
             endGame();
-            clearInterval(countdown);
+            clearInterval(interval);
         }
     },
     1000);

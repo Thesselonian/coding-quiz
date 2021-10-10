@@ -12,6 +12,14 @@ header {
     justify-content: center;
 }
 
+.high-score-buttons {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+
 /* Utilities */
 
 .flex-box {
