@@ -32,10 +32,8 @@ var populateScores = function() {
     }
 };
 
-function clearList(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
+function clearList() {
+    highScores.innerHTML="";
 }
 
 
@@ -49,6 +47,6 @@ var clearScoresFunction = function() {
 
 goBack.addEventListener("click", goBackFunction);
 clearScores.addEventListener("click", clearScoresFunction);
-clearScores.addEventListener("click", clearList(highScores));
+clearScores.addEventListener("click", clearList);
 
 populateScores();
