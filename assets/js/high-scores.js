@@ -33,7 +33,9 @@ var populateScores = function() {
 };
 
 function clearList() {
-    highScores.innerHTML="";
+    while (highScores.firstChild) {
+        highScores.removeChild(highScores.firstChild);
+    }
 }
 
 
