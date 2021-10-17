@@ -7,8 +7,8 @@ The high scores don't clear when the button is pushed. I tried to  use a while l
 
 Here are some images of the application.
 
-![QUiz Startup](./assets/images/Quiz-Start-Up "Quiz Startup")
-![QUiz Question](./assets/images/Quiz-Question "Quiz Question")
-![QUiz End](./assets/images/Quiz-End "Quiz End")
-![QUiz High Scores](./assets/images/Quiz-High-Scores "Quiz High Scores")
+![QUiz Startup](/assets/images/Quiz-Start-Up.JPG "Quiz Startup")
+![QUiz Question](/assets/images/Quiz-Question.JPG "Quiz Question")
+![QUiz End](/assets/images/Quiz-End.JPG "Quiz End")
+![QUiz High Scores](/assets/images/Quiz-High-Scores.JPG "Quiz High Scores")
 
